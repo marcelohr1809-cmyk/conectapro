@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProMatch | Encuentra al profesional correcto</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;color:#172033;background:#f8fafc}
+header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;background:white;border-bottom:1px solid #ddd}
+.logo{font-size:24px;font-weight:bold;color:#2563eb}
+nav a{margin-left:25px;text-decoration:none;color:#555}
+.hero{text-align:center;padding:80px 20px;background:linear-gradient(135deg,#eff6ff,#fff)}
+.hero h1{font-size:52px;max-width:800px;margin:auto}
+.hero h1 span{color:#2563eb}
+.hero p{max-width:650px;margin:20px auto;color:#64748b;font-size:18px}
+.search{background:white;max-width:1000px;margin:35px auto;padding:15px;border-radius:15px;box-shadow:0 10px 30px #0002;display:flex;gap:10px}
+input,select,button{padding:14px;border:1px solid #ddd;border-radius:8px}
+input,select{flex:1}
+button{background:#2563eb;color:white;border:0;font-weight:bold;cursor:pointer}
+section{padding:70px 7%}
+h2{text-align:center;font-size:35px;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1100px;margin:auto}
+.card{background:white;border:1px solid #ddd;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px #0001}
+.photo{height:180px;background:#dbeafe;display:flex;align-items:end;padding:15px}
+.card-content{padding:20px}
+.badge{background:#dcfce7;color:#15803d;padding:6px 10px;border-radius:20px;font-size:12px}
+.compat{float:right;color:#2563eb;font-weight:bold}
+.card p{color:#64748b;margin:10px 0}
+.price{font-weight:bold;font-size:18px;margin:15px 0}
+.features{display:flex;justify-content:space-around;text-align:center}
+.feature{padding:25px}
+.feature h3{margin:10px}
+.feature p{color:#64748b}
+.cta{text-align:center;background:#0f172a;color:white}
+.cta p{color:#cbd5e1;margin:15px}
+footer{text-align:center;padding:30px;background:white;color:#64748b}
+
+@media(max-width:800px){
+.search,.grid{display:block}
+.search>*{width:100%;margin:5px 0}
+.grid .card{margin-bottom:20px}
+.hero h1{font-size:38px}
+nav{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">ProMatch</div>
+<nav>
+<a href="#como">Cómo funciona</a>
+<a href="#profesionales">Profesionales</a>
+<a href="#profesional">Soy profesional</a>
+</nav>
+</header>
+
+<div class="hero">
+<p>🇲🇽 Comenzando en Monterrey</p>
+
+<h1>
+Encuentra al <span>profesional correcto</span>
+para tu proyecto.
+</h1>
+
+<p>
+Seleccionamos, verificamos y recomendamos
+profesionales según lo que realmente necesitas.
+</p>
+
+<div class="search">
+<input id="busqueda" placeholder="¿Qué necesitas? Ej. arquitecto">
+<select>
+<option>Monterrey</option>
+<option>San Pedro</option>
+<option>Santa Catarina</option>
+<option>Apodaca</option>
+<option>Guadalupe</option>
+</select>
+<select>
+<option>Cualquier presupuesto</option>
+<option>$5,000 - $10,000</option>
+<option>$10,000 - $25,000</option>
+<option>$25,000 - $50,000</option>
+<option>$50,000+</option>
+</select>
+<button onclick="buscar()">Buscar</button>
+</div>
+</div>
+
+<section id="como">
+<h2>¿Cómo funciona?</h2>
+
+<div class="grid">
+<div class="feature">
+<h3>🔎 Seleccionamos</h3>
+<p>Buscamos profesionales que realmente se ajusten a tu proyecto.</p>
+</div>
+
+<div class="feature">
+<h3>✓ Verificamos</h3>
+<p>Revisamos identidad, experiencia, credenciales y trabajos.</p>
+</div>
+
+<div class="feature">
+<h3>⭐ Recomendamos</h3>
+<p>Te presentamos las mejores opciones para que puedas comparar.</p>
+</div>
+</div>
+</section>
+
+<section id="profesionales">
+<h2>Profesionales recomendados</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="photo">
+<span class="badge">✓ Verificado</span>
+</div>
+<div class="card-content">
+<span class="compat">97% compatible</span>
+<h3>Diego Martínez</h3>
+<p>🏠 Arquitecto · San Pedro</p>
+<p>★★★★★ 4.9</p>
+<p>42 proyectos · 12 verificados</p>
+<div class="price">$150,000+</div>
+<button onclick="contactar('Diego Martínez')">Ver perfil</button>
+</div>
+</div>
+
+<div class="card">
+<div class="photo">
+<span class="badge">✓ Verificado</span>
+</div>
+<div class="card-content">
+<span class="compat">94% compatible</span>
+<h3>Valeria Gómez</h3>
+<p>📸 Fotógrafa · Monterrey</p>
+<p>★★★★★ 4.8</p>
+<p>87 bodas · 24 verificadas</p>
+<div class="price">$20,000 - $35,000</div>
+<button onclick="contactar('Valeria Gómez')">Ver perfil</button>
+</div>
+</div>
+
+<div class="card">
+<div class="photo">
+<span class="badge">✓ Verificado</span>
+</div>
+<div class="card-content">
+<span class="compat">91% compatible</span>
+<h3>Andrés Torres</h3>
+<p>🏠 Diseñador de interiores · Monterrey</p>
+<p>★★★★★ 5.0</p>
+<p>31 proyectos · 8 verificados</p>
+<div class="price">$80,000+</div>
+<button onclick="contactar('Andrés Torres')">Ver perfil</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="cta" id="profesional">
+<h2>¿Eres profesional?</h2>
+<p>Crea tu perfil y permite que los clientes correctos encuentren tu trabajo.</p>
+<button onclick="registro()">Quiero ser profesional</button>
+</section>
+
+<footer>
+<strong>ProMatch</strong>
+<p>Encuentra al profesional correcto.</p>
+<p>© 2026 ProMatch · Prototipo</p>
+</footer>
+
+<script>
+function buscar(){
+let x=document.getElementById("busqueda").value;
+alert("Analizando tu necesidad: "+(x||"profesional")+" 🔎\n\nProMatch buscaría los profesionales con mayor compatibilidad.");
+}
+
+function contactar(nombre){
+alert("Perfil de "+nombre+"\n\n✓ Verificado\n⭐ Reseñas\n📁 Portafolio\n💰 Precios\n📅 Disponibilidad\n\nEn la versión real aquí podrás contactar directamente.");
+}
+
+function registro(){
+alert("Registro de profesional\n\nEn la versión real podrás crear tu perfil, subir proyectos, recibir reseñas y conseguir clientes.");
+}
+</script>
+
+</body>
+</html>
